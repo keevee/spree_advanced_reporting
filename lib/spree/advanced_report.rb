@@ -23,14 +23,14 @@ module Spree
 
       if params[:search][:completed_at_gt].blank?
         if (Order.count > 0) && Order.minimum(:completed_at)
-          params[:search][:completed_at_gt] = Order.minimum(:completed_at).beginning_of_day
+          params[:search][:completed_at_gt] = Date.today.beginning_of_month.beginning_of_day
         end
       else
         params[:search][:completed_at_gt] = Time.zone.parse(params[:search][:completed_at_gt]).beginning_of_day rescue ""
       end
       if params[:search][:completed_at_lt].blank?
         if (Order.count > 0) && Order.maximum(:completed_at)
-          params[:search][:completed_at_lt] = Order.maximum(:completed_at).end_of_day
+          params[:search][:completed_at_lt] = Date.today.end_of_day
         end
       else
         params[:search][:completed_at_lt] = Time.zone.parse(params[:search][:completed_at_lt]).end_of_day rescue ""

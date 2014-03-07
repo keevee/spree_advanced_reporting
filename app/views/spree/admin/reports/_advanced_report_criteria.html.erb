@@ -18,11 +18,11 @@
     <div class="yui-g date-range-filter">
       <div class="yui-u sub-field first" style="float:left;">
         <label class="sub"><%= Spree.t("start") %></label>
-        <%= s.text_field :completed_at_gt , :class => 'datepicker'%>
+        <%= s.text_field :completed_at_gt , :value => params[:search][:completed_at_gt] || Date.today.beginning_of_month, :class => 'datepicker'%>
       </div>
       <div class="yui-u sub-field" style="float:left;">
         <label><%= Spree.t("stop") %></label>
-        <%= s.text_field :completed_at_lt ,  :class => 'datepicker' %>
+        <%= s.text_field :completed_at_lt , :value => params[:search][:completed_at_lt] || Date.today, :class => 'datepicker' %>
       </div>
     </div>
 
