@@ -10,7 +10,8 @@ Spree::Admin::ReportsController.class_eval do
 
   # TODO there has got to be a more ruby way to do this...
   ADVANCED_REPORTS ||= {}
-  [ :outstanding, :revenue, :units, :profit, :count, :top_products, :top_customers, :geo_revenue, :geo_units, :geo_profit].each do |x|
+#profit useles atm for me
+  [ :outstanding, :revenue, :units, :count, :top_products, :top_customers, :geo_revenue, :geo_units].each do |x|
     # TODO we should pull the name + description for the report models themselves rather than redefining them as I18n definitions
     ADVANCED_REPORTS[x]= {name: I18n.t("#{x}", scope: [:adv_report]), :description => I18n.t("#{x}_description", scope: :adv_report)}
   end

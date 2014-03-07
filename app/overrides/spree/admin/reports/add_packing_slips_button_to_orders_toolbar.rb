@@ -3,5 +3,6 @@ Deface::Override.new(
   :name          => "report_dashboard_button",
   :insert_before => '[class="index"]',
   :partial       => "spree/admin/reports/dashboard_button",
-  :disabled      => false
+  :disabled      => true
+#TO-DO reenable later
 )
