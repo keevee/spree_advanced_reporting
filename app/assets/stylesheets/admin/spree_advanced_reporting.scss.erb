@@ -14,8 +14,8 @@ ul#show_data {
 
 ul#show_data li {
   padding-left: 10px;
-  height: 37px;
-  padding-top: 3px;
+  height:       40px;
+  padding-top:  3px;
   display: block;
   &.selected {
     background: url(<%= asset_path 'admin/spree_advanced_reporting/menu-current-opposite.png'%>);
@@ -71,4 +71,11 @@ th.headerSortUp {
 th.headerSortDown {
   background-image: url(<%= asset_path 'admin/spree_advanced_reporting/desc.gif'%>);
   background-color: #3399FF;
+}
+
+.date-range-filter {
+  label {
+    display:    inline-block;
+    min-width:  40px;
+  }
 }
