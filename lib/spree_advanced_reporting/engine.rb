@@ -19,6 +19,12 @@ module SpreeAdvancedReporting
     end
 
     config.to_prepare &method(:activate).to_proc
+      initializer "spree_advanced_reporting.assets.precompile" do |app|
+        app.config.assets.precompile += %w(
+          admin/spree_advanced_reporting.css
+          admin/spree_advanced_reporting.js
+        )
+      end
   end
 end
 
